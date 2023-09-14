@@ -1,0 +1,40 @@
+# @name get-prompts
+GET http://localhost:3333/prompts
+
+###
+
+# @name upload
+
+POST http://localhost:3333/videos
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file"; filename="example.mp3"
+Content-Type: audio/mpeg
+
+< ./example.pm3
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+###
+
+# @name create-transcription
+
+POST http://localhost:3333/videos/93265a51-2bce-4e3d-9ae3-19e8f1457e0a/transcription
+Content-Type: application/json
+
+{
+    "prompt": "backend, technologies, videos, class"
+}
+
+###
+
+# @name generate-ai-completion
+
+POST http://localhost:3333/ai/complete
+Content-Type: application/json
+
+{
+    "videoId": "93265a51-2bce-4e3d-9ae3-19e8f1457e0a",
+    "temperature": 0.5,
+    "prompt": "Gere um resumo sucinto da transcrição do vídeo informada a seguir: '''{transcription} '''"
+}
