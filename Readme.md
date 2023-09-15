@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="200px" alt="Project NLW IA Mastery" title="Project NLW IA Mastery Logo" src="./.gihub/logo-nlw-ia-mastery.svg" />
+  <img width="200px" alt="Project NLW IA Mastery" title="Project NLW IA Mastery Logo" src="./.github/logo-nlw-ia-mastery.svg" />
   
   <h1 align="center">NLW Upload.AI</h1>
 
